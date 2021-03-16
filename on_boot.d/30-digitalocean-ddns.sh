@@ -9,6 +9,7 @@ else
     --net=host \
     --name "$CONTAINER" \
     --security-opt=no-new-privileges \
-    --env-file=/mnt/data/digitalocean-ddns/config.env \
+    --env DO_DYNDNS_CONFIG=/config/do_ddns.toml \
+    -v /mnt/data/digitalocean-ddns/config/do_ddns.toml:/config/do_ddns.toml
     alcroito/digitalocean-dyndns:latest
 fi
